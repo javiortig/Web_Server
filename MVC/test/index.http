@@ -1,0 +1,115 @@
+GET http://localhost:3000/api/tracks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBiMzI0MDYyMzAyZGY5MTQ2Y2E3MTUiLCJyb2xlIjoidXNlciIsImlhdCI6MTY3ODQ1NTU5OSwiZXhwIjoxNjc4NDYyNzk5fQ.RQh5hW6sU6Fmx1LSQd1NkHNICQGf1OOWmHJwDZuWGjE
+
+###
+
+GET http://localhost:3000/api/tracks/63fba226c391fd40d29c4dd7
+
+###
+
+POST http://localhost:3000/api/tracks HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBiMzI0MDYyMzAyZGY5MTQ2Y2E3MTUiLCJyb2xlIjoidXNlciIsImlhdCI6MTY3ODQ1NTU5OSwiZXhwIjoxNjc4NDYyNzk5fQ.RQh5hW6sU6Fmx1LSQd1NkHNICQGf1OOWmHJwDZuWGjE
+
+{
+    "dato": "basura",
+    "name": "Ric",
+    "album": "Album",
+    "cover": "http://tttt.com",
+    "artist": {
+        "name": "Ric",
+        "nickname": "rsurname",
+        "nationality": "ES"
+    },
+    "duration": {
+        "start":1,
+        "end":2
+    },
+    "mediaId": "0123456789abcdef01234567"
+  
+}
+
+###
+
+PUT http://localhost:3000/api/tracks/63fba226c391fd40d29c4dd7 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBiMzI0MDYyMzAyZGY5MTQ2Y2E3MTUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg0NTcwMzYsImV4cCI6MTY3ODQ2NDIzNn0.JJpSLKITgnPTHrj4N6PaF5pjkh24s6-wX9zeMpRuwRI
+
+{
+    "name": "Ric4",
+    "album": "Album2",
+    "cover": "http://t2asd.com",
+    "artist": {
+        "name": "Ric4",
+        "nickname": "surname2",
+        "nationality": "ES"
+    },
+    "duration": {
+        "start":1,
+        "end":2
+    },
+    "mediaId": "0123456789abcdef01234567"
+  
+}
+
+###
+
+DELETE http://localhost:3000/api/tracks/63fba226c391fd40d29c4dd7
+
+###
+
+GET http://localhost:3000/api/storage
+
+###
+
+GET http://localhost:3000/api/storage/:40b09efcad90928770e495d
+
+###
+
+POST http://localhost:3000/api/storage HTTP/1.1
+Content-Type: multipart/form-data; boundary=Boundry
+
+--Boundry
+Content-Disposition: form-data; name="image"; filename="img.jpg"
+Content-Type: image/jpg
+
+< ./img.jpg
+--Boundry--
+
+###
+
+POST http://localhost:3000/api/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "prueba",
+    "age": 22,
+    "email": "prueba@test.com",
+    "password": "prueba1234",
+    "role": "user"
+}
+
+###
+
+POST http://localhost:3000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "prueba@test.com",
+    "password": "prueba1234"
+}
+
+###
+
+GET http://localhost:3000/api/tracks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBiMzI0MDYyMzAyZGY5MTQ2Y2E3MTUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg0NTc5MjAsImV4cCI6MTY3ODQ2NTEyMH0.bYwN4UMA-XmRAd-effLSDctFTlPz5XHkUYDcph9X_jU
+
+###
+
+PUT http://localhost:3000/api/auth/makeAdmin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBiMzI0MDYyMzAyZGY5MTQ2Y2E3MTUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg0NTc5MjAsImV4cCI6MTY3ODQ2NTEyMH0.bYwN4UMA-XmRAd-effLSDctFTlPz5XHkUYDcph9X_jU
+Content-Type: application/json
+
+{
+    "userEmail": "admin8@test.com"
+}
